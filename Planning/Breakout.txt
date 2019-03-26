@@ -1,0 +1,38 @@
+-Can be played by two or more players
+
+#Allow the user to choose to be the odds or evens player:-
+-Odds players
+-Evens Players
+
+#Actions
+-Prompt the user for the no of fingers that they wish to show.
+(Hold out between 1 and 10 fingers)
+-Random number from the compute (math.random function).
+-Display the number of fingers that the computer has shown and yours (user).
+-Display total no of points for each player (scoreboard) and whether the user/computer has won that round.
+-End of Game - Display victor!!! + History of the numbers fingers shown by both players per round.
+
+#Winner of the Round
+-The sum of fingers shown by both players (ex.Player1 is the odds player, the Player2 is evens player. Player1 shows 2 fingers and Player 2 shows 2 fingers. So Player2 Wins!)
+-2 points given to Player2!!
+-1 bonus point goes towards the player who was closest.
+-0 bonus point if the number of fingers is the same (assumption).
+
+
+#Allow a user to play repeatedly
+[ARRAYS]
+-Game will end at 6 but afterwards give the user a choice to continue or exit the game.
+-Show a history of games played (human player).
+-How many even and odd numbers have been chosen by each player.
+-Extra points received by the player per game.
+
+Storing the games:
+_Minimum (2); 
+_Maximum(3);
+
+
+Features
+
+
+Requirements
+
