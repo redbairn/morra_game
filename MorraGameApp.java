@@ -11,17 +11,18 @@ public class MorraGameApp{
 		//Declare data members
 		int p1Fingers;//input - For Human player
 		int p2Fingers;//output - Math random input - Computer player
-		int score1;//output - for the round scores (p1)
-		int score2;//output - for the round scores (p2)
-		String option;//input - Odds or Evens
+		int p1Score;//output - for the round scores (p1)
+		int p2Score;//output - for the round scores (p2)
+		String p1Option;//input - Odds or Evens
+		String p2Option;//input - Odds or Evens
 		String roundWinner;//output - The round victor!
 
 		//Objects
 		MorraGame myGame=new MorraGame();
 
 		//Input
-		option=JOptionPane.showInputDialog(null, "Would you like to be Odds or Evens?");
-		myGame.setOption(option);
+		p1Option=JOptionPane.showInputDialog(null, "Would you like to be the option for Odd or Even?");
+		myGame.setP1Option(p1Option);
 
 		p1Fingers=Integer.parseInt(JOptionPane.showInputDialog(null, "Enter how many fingers you will show to Player 2: "));
 		myGame.setP1Fingers(p1Fingers);
@@ -31,9 +32,13 @@ public class MorraGameApp{
 
 		//Output
 		p1Fingers = myGame.getP1Fingers();
-		JOptionPane.showMessageDialog(null,"Player One shows "+p1Fingers+"fingers!");
-		p2Fingers = myGame.getP2Fingers();
-		JOptionPane.showMessageDialog(null,"Player One shows "+p2Fingers+"fingers!");
-
+		if(p1Fingers==99){
+			JOptionPane.showMessageDialog(null,"Player1. The number you entered is outside of the range!");
+		}else{
+			JOptionPane.showMessageDialog(null,"Player One ("+p1Option+") shows "+p1Fingers+" fingers!");
+			p2Fingers = myGame.getP2Fingers();
+			p2Option = myGame.getP2Option();
+			JOptionPane.showMessageDialog(null,"Player Two ("+p2Option+") shows "+p2Fingers+" fingers!");
+		}
 	}
 }
