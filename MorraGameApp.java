@@ -39,6 +39,9 @@ public class MorraGameApp{
 			p2Fingers = myGame.getP2Fingers();
 			p2Option = myGame.getP2Option();
 			JOptionPane.showMessageDialog(null,"Player Two ("+p2Option+") shows "+p2Fingers+" fingers!");
+			p1Score = myGame.getP1Score();
+			p2Score = myGame.getP2Score();
+			JOptionPane.showMessageDialog(null,"Player One has "+p1Score+" points and Player Two has "+p2Score+" points.");
 		}
 	}
 }

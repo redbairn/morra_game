@@ -43,7 +43,7 @@ public class MorraGame{
 	public void compute(){
 		//_Check the number of fingers used by the Human
 		if(p1Fingers<1 || p1Fingers>10){
-			p1Fingers=99;
+			p1Fingers=99; // Error code
 		}
 		//_When the Human chooses one option we need to set the other option for the Computer
 		if(p1Option=="odd" || p1Option=="Odd" || p1Option=="ODD"){
@@ -53,15 +53,24 @@ public class MorraGame{
 		}
 		//_Total number of fingers between P1 and P2
 		total=(p1Fingers+p2Fingers);
+
+
+
 		//_Check if there is a remainder
-		if(total % 2==0){
+		if(total % 2==0 && p1Option=="even"){
 			//need to increment by 2 points
-			evens = evens + 2;
+			p1Score = p1Score + 2;
 		}else{
 			//need to increment by 2 points
-			odds = odds + 2;
+			p2Score = p2Score + 2;
 		}
-
+		if(total % 2==0 && p2Option=="even"){
+			//need to increment by 2 points
+			p2Score = p2Score + 2;
+		}else{
+			//need to increment by 2 points
+			p1Score = p1Score + 2;
+		}
 
 
 	}
@@ -70,26 +79,26 @@ public class MorraGame{
 	//Getters
 	//_Return the Option for the Computer
 	public String getP2Option(){
-					return p2Option;
+		return p2Option;
 	}
 
 	//_Return the number of fingers shown by player1
 	public int getP1Fingers(){
-				return p1Fingers;
+		return p1Fingers;
 	}
 	//_Return the number of fingers shown by player2
 	public int getP2Fingers(){
-					return p2Fingers;
+		return p2Fingers;
 	}
 	//_Return the Round Winner
 	public String getRoundWinner(){
-			return roundWinner;
+		return roundWinner;
 	}
 	//_Return the Scoreboard
 	public int getP1Score(){
-				return p1Score;
+		return p1Score;
 	}
 	public int getP2Score(){
-					return p2Score;
+		return p2Score;
 	}
 }
