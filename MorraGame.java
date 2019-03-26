@@ -13,6 +13,8 @@ public class MorraGame{
 	private int score1;//output - for the round scores (p1)
 	private int score2;//output - for the round scores (p2)
 	private int total;//process
+	private int evens;
+	private int odds;
 	private String option;//input - Odds or Evens
 	private String roundWinner;//output - The round victor!
 
@@ -23,6 +25,8 @@ public class MorraGame{
 		p2Fingers = (int) (Math.random()*10); //no between 0 and 10
 		score1=0;
 		score2=0;
+		evens=0;
+		odds=0;
 		option="";
 	}
 
@@ -38,11 +42,16 @@ public class MorraGame{
 		//_Total number of fingers between P1 and P2
 		total=(p1Fingers+p2Fingers);
 		//_Check if there is a remainder
-		if(){
+		if(total % 2==0){
 			//need to increment by 2 points
+			evens = evens + 2;
 		}else{
 			//need to increment by 2 points
+			odds = odds + 2;
 		}
+
+
+
 	}
 
 
