@@ -1,6 +1,7 @@
 /*
 	Program: MorraGame.java
 	Authors: Craig Bell
+	Jason Git Commit Test
 	Date Updated: 25-03-2019
 	Class: Software Development (Java)
 */
@@ -75,7 +76,6 @@ public class MorraGame{
 
 
 	}
-
 
 	//Getters
 	//_Return the Option for the Computer
