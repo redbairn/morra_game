@@ -18,6 +18,7 @@ public class MorraGame{
 	private String p1Option;//input - Odds or Evens
 	private String p2Option;//input - Odds or Evens
 	private String roundWinner;//output - The round victor!
+	//private String roundWinner;//output - The round victor!
 
 
 	//Constructor
