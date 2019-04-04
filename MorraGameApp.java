@@ -13,6 +13,7 @@ public class MorraGameApp{
 		int p2Fingers;//output - Math random input - Computer player
 		int p1Score;//output - for the round scores (p1)
 		int p2Score;//output - for the round scores (p2)
+		int total; //total number of fingers shown between the two players
 		String p1Option;//input - Odds or Evens
 		String p2Option;//input - Odds or Evens
 		String roundWinner;//output - The round victor!
@@ -34,11 +35,14 @@ public class MorraGameApp{
 		p1Fingers = myGame.getP1Fingers();
 		if(p1Fingers==99){
 			JOptionPane.showMessageDialog(null,"Player1. The number you entered is outside of the range!");
-		}else{
+		}
+		else{
 			JOptionPane.showMessageDialog(null,"Player One ("+p1Option+") shows "+p1Fingers+" fingers!");
 			p2Fingers = myGame.getP2Fingers();
 			p2Option = myGame.getP2Option();
 			JOptionPane.showMessageDialog(null,"Player Two ("+p2Option+") shows "+p2Fingers+" fingers!");
+			total = myGame.getTotal();
+			JOptionPane.showMessageDialog(null,"Total fingers shown is "+total);
 			p1Score = myGame.getP1Score();
 			p2Score = myGame.getP2Score();
 			JOptionPane.showMessageDialog(null,"Player One has "+p1Score+" points and Player Two has "+p2Score+" points.");

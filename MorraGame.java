@@ -30,8 +30,10 @@ public class MorraGame{
 		p2Score=0;
 		evens=0;
 		odds=0;
+		total=0;
 		p1Option="";
 		p2Option="";
+
 	}
 
 	//Setters
@@ -39,7 +41,10 @@ public class MorraGame{
 		this.p1Fingers=p1Fingers;
 	}
 	public void setP1Option(String p1Option){
-			this.p1Option=p1Option;
+		this.p1Option=p1Option;
+	}
+	public void setTotal(int total){
+		this.total=total;
 	}
 	//Compute
 	public void compute(){
@@ -59,19 +64,18 @@ public class MorraGame{
 
 
 		//_Check if there is a remainder
-		if(total % 2==0 && p1Option=="even"){
+		if(total % 2==0){
 			//need to increment by 2 points
-			p1Score = p1Score + 2;
-		}else{
-			//need to increment by 2 points
-			p2Score = p2Score + 2;
+			 if(p1Option == "even")
+				p1Score = p1Score + 2;
+			else
+				p2Score = p2Score + 2;
 		}
-		if(total % 2==0 && p2Option=="even"){
-			//need to increment by 2 points
-			p2Score = p2Score + 2;
-		}else{
-			//need to increment by 2 points
-			p1Score = p1Score + 2;
+		else {
+		 if(p1Option == "odd")
+		 		p1Score = p1Score + 2;
+		 	else
+				p2Score = p2Score + 2;
 		}
 
 
