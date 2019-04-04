@@ -14,8 +14,8 @@ public class MorraGame{
 	private int p1Score;//output - for the round scores (p1)
 	private int p2Score;//output - for the round scores (p2)
 	private int total;//process
-	private int evens;
-	private int odds;
+	private String evens;
+	private String odds;
 	private String p1Option;//input - Odds or Evens
 	private String p2Option;//input - Odds or Evens
 	private String roundWinner;//output - The round victor!
@@ -28,8 +28,8 @@ public class MorraGame{
 		p2Fingers = (int) (Math.random()*10); //no between 0 and 10
 		p1Score=0;
 		p2Score=0;
-		evens=0;
-		odds=0;
+		evens="";
+		odds="";
 		total=0;
 		p1Option="";
 		p2Option="";
@@ -40,8 +40,14 @@ public class MorraGame{
 	public void setP1Fingers(int p1Fingers){
 		this.p1Fingers=p1Fingers;
 	}
+	public void setP2Fingers(int p2Fingers){
+		this.p2Fingers=p2Fingers;
+	}
 	public void setP1Option(String p1Option){
 		this.p1Option=p1Option;
+	}
+	public void setP2Option(String p2Option){
+		this.p2Option=p2Option;
 	}
 	public void setTotal(int total){
 		this.total=total;
@@ -55,8 +61,9 @@ public class MorraGame{
 		//_When the Human chooses one option we need to set the other option for the Computer
 		if(p1Option=="odd" || p1Option=="Odd" || p1Option=="ODD"){
 			p2Option="even";
-		}else{
-			p2Option="odd";
+		}
+			else if(p1Option=="even" || p1Option=="Even" || p1Option=="EVEN"){
+				p2Option="odd";
 		}
 		//_Total number of fingers between P1 and P2
 		total=(p1Fingers+p2Fingers);
@@ -66,7 +73,7 @@ public class MorraGame{
 		//_Check if there is a remainder
 		if(total % 2==0){
 			//need to increment by 2 points
-			 if(p1Option == "even")
+			if(p1Option == "even")
 				p1Score = p1Score + 2;
 			else
 				p2Score = p2Score + 2;
@@ -83,10 +90,12 @@ public class MorraGame{
 
 	//Getters
 	//_Return the Option for the Computer
+	public String getP1Option(){
+		return p1Option;
+	}
 	public String getP2Option(){
 		return p2Option;
 	}
-
 	//_Return the number of fingers shown by player1
 	public int getP1Fingers(){
 		return p1Fingers;
@@ -98,6 +107,10 @@ public class MorraGame{
 	//_Return the Round Winner
 	public String getRoundWinner(){
 		return roundWinner;
+	}
+	//return the total fingers
+	public int getTotal(){
+		return total;
 	}
 	//_Return the Scoreboard
 	public int getP1Score(){

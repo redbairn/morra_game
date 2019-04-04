@@ -42,7 +42,7 @@ public class MorraGameApp{
 			p2Option = myGame.getP2Option();
 			JOptionPane.showMessageDialog(null,"Player Two ("+p2Option+") shows "+p2Fingers+" fingers!");
 			total = myGame.getTotal();
-			JOptionPane.showMessageDialog(null,"Total fingers shown is "+total);
+			JOptionPane.showMessageDialog(null,"Total fingers shown is "+total); //should show the total number of finger between P1 & P2
 			p1Score = myGame.getP1Score();
 			p2Score = myGame.getP2Score();
 			JOptionPane.showMessageDialog(null,"Player One has "+p1Score+" points and Player Two has "+p2Score+" points.");
