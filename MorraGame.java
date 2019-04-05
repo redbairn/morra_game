@@ -59,11 +59,11 @@ public class MorraGame{
 			p1Fingers=99; // Error code
 		}
 		//_When the Human chooses one option we need to set the other option for the Computer
-		if(p1Option=="odd" || p1Option=="Odd" || p1Option=="ODD"){
-			p2Option="even";
+		if(p1Option.equalsIgnoreCase("odd")){
+			p2Option.equalsIgnoreCase ("even");
 		}
-			else if(p1Option=="even" || p1Option=="Even" || p1Option=="EVEN"){
-				p2Option="odd";
+			else if(p1Option.equalsIgnoreCase("even")){
+				p2Option.equalsIgnoreCase("odd");
 		}
 		//_Total number of fingers between P1 and P2
 		total=(p1Fingers+p2Fingers);
@@ -73,13 +73,13 @@ public class MorraGame{
 		//_Check if there is a remainder
 		if(total % 2==0){
 			//need to increment by 2 points
-			if(p1Option == "even")
+			if(p1Option.equals("even"))
 				p1Score = p1Score + 2;
 			else
 				p2Score = p2Score + 2;
 		}
 		else {
-		 if(p1Option == "odd")
+		 if(p1Option.equals("odd"))
 		 		p1Score = p1Score + 2;
 		 	else
 				p2Score = p2Score + 2;
