@@ -17,6 +17,8 @@ public class MorraGame{
 	private int distance;// compute
 	private int p1BonusScore;
 	private int p2BonusScore;
+	private int p1TotalScore;
+	private int p2TotalScore;
 	private String evens;
 	private String odds;
 	private String p1Option;//input - Odds or Evens
@@ -34,6 +36,8 @@ public class MorraGame{
 		p2Score=0;
 		p1BonusScore=0;
 		p2BonusScore=0;
+		p1TotalScore=0;
+		p2TotalScore=0;
 		distance=0;
 		evens="";
 		odds="";
@@ -92,35 +96,11 @@ public class MorraGame{
 		}
 
 		//_Bonus Points
-		//int distance = Math.abs(numbers[0] - myNumber);
-		//int idx = 0;
-		//int[] numbers = new int[2];
-		//numbers[0] = p1Fingers;//Setting the amount of fingers for player 1 to an array index 0.
-		//numbers[1] = p2Fingers;//Setting the amount of fingers for player 3 to an array index 1.
-
-		//for(int i = 1; i < numbers.length; i++){
-		//	int cdistance = numbers[i] - myNumber;
-		//}
-		//_Give bonus points to the player closest to the total
-		//if(p1Fingers){
-		//need to increment by 1 points
-		//	if(p1Option)
-		//		p1Score = p1Score + 1;
-		//	else
-		//		p2Score = p2Score + 1;
-		///}else{
-		//	if(p1Option)
-		//		p1Score = p1Score + 1;
-		//	else
-		//		p2Score = p2Score + 1;
-		//}
-
-		int distance = Math.abs(total - p1Fingers) < Math.abs(total - p2Fingers) ? p1Fingers : p2Fingers;
 
 		if (Math.abs(p1Fingers-total) <= Math.abs(p2Fingers-total)){
 			p1BonusScore = p1BonusScore + 1;
 		}
-		else if(p1Fingers==p2Fingers){
+		else if(p1Fingers==p2Fingers){ //edge case where both players show the same number of fingers
 			p1BonusScore = p1BonusScore + 0;
 			p2BonusScore = p2BonusScore + 0;
 		}
@@ -128,6 +108,10 @@ public class MorraGame{
 		else{
 		  p2BonusScore = p2BonusScore + 1;
 		}
+		// running total score
+		p1TotalScore=p1Score+p1BonusScore;
+		p2TotalScore=p2Score+p2BonusScore;
+
 
 	}
 
@@ -167,5 +151,11 @@ public class MorraGame{
 	}
 	public int getP2BonusScore(){
 		return p2BonusScore;
+	}
+	public int getP1TotalScore(){
+		return p1TotalScore;
+	}
+	public int getP2TotalScore(){
+		return p2TotalScore;
 	}
 }

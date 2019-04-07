@@ -15,6 +15,8 @@ public class MorraGameApp{
 		int p2Score;//output - for the round scores (p2)
 		int p1BonusScore;
 		int p2BonusScore;
+		int p1TotalScore;
+		int p2TotalScore;
 		int total; //total number of fingers shown between the two players
 		String p1Option;//input - Odds or Evens
 		String p2Option;//input - Odds or Evens
@@ -65,6 +67,9 @@ public class MorraGameApp{
 			p1BonusScore = myGame.getP1BonusScore();
 			p2BonusScore = myGame.getP2BonusScore();
 			JOptionPane.showMessageDialog(null,"Player One has "+p1BonusScore+" bonus points and Player Two has "+p2BonusScore+" bonus points.");
+			p1TotalScore = myGame.getP1TotalScore();
+			p2TotalScore = myGame.getP2TotalScore();
+			JOptionPane.showMessageDialog(null,"Player One has "+p1TotalScore+" total points and Player Two has "+p2TotalScore+" total points.");
 		}
 	}
 }
