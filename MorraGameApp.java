@@ -21,12 +21,23 @@ public class MorraGameApp{
 		//Objects
 		MorraGame myGame=new MorraGame();
 
-		//Input
-		p1Option=JOptionPane.showInputDialog(null, "Would you like to be the option for Odd or Even?").toLowerCase();
-		myGame.setP1Option(p1Option);
 
-		p2Option=JOptionPane.showInputDialog(null, "Player 2 is ("+p2Option+")");
-		myGame.setP2Option(p2Option);
+		//Input
+
+
+   		p1Option=JOptionPane.showInputDialog(null, "Would you like to be the option for Odd or Even?").toLowerCase();
+
+				while(!p1Option.equalsIgnoreCase("Odd") || !p1Option.equalsIgnoreCase("Even")){
+					JOptionPane.showMessageDialog(null,"Player1 - Please enter odd or even!");
+
+					p1Option=JOptionPane.showInputDialog(null, "Would you like to be the option for Odd or Even?").toLowerCase();
+				if(p1Option.equalsIgnoreCase("Odd") || p1Option.equalsIgnoreCase("Even")){
+					myGame.setP1Option(p1Option);
+					break;
+				}
+			}
+
+
 
 		p1Fingers=Integer.parseInt(JOptionPane.showInputDialog(null, "Enter how many fingers you will show to Player 2: "));
 		myGame.setP1Fingers(p1Fingers);
@@ -39,6 +50,7 @@ public class MorraGameApp{
 		if(p1Fingers==99){
 			JOptionPane.showMessageDialog(null,"Player1. The number you entered is outside of the range!");
 		}
+
 		else{
 			JOptionPane.showMessageDialog(null,"Player One ("+p1Option+") shows "+p1Fingers+" fingers!");
 			p2Fingers = myGame.getP2Fingers();
