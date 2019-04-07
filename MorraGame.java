@@ -61,10 +61,10 @@ public class MorraGame{
 		}
 		//_When the Human chooses one option we need to set the other option for the Computer
 		if(p1Option.equalsIgnoreCase("odd")){
-			p2Option.equalsIgnoreCase ("even");
+			p2Option="even";
 		}
 			else if(p1Option.equalsIgnoreCase("even")){
-				p2Option.equalsIgnoreCase("odd");
+				p2Option="odd";
 		}
 		//_Total number of fingers between P1 and P2
 		total=(p1Fingers+p2Fingers);

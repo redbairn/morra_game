@@ -25,6 +25,9 @@ public class MorraGameApp{
 		p1Option=JOptionPane.showInputDialog(null, "Would you like to be the option for Odd or Even?").toLowerCase();
 		myGame.setP1Option(p1Option);
 
+		p2Option=JOptionPane.showInputDialog(null, "Player 2 is ("+p2Option+")");
+		myGame.setP2Option(p2Option);
+
 		p1Fingers=Integer.parseInt(JOptionPane.showInputDialog(null, "Enter how many fingers you will show to Player 2: "));
 		myGame.setP1Fingers(p1Fingers);
 
