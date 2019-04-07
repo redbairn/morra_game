@@ -15,6 +15,8 @@ public class MorraGame{
 	private int p2Score;//output - for the round scores (p2)
 	private int total;//process
 	private int distance;// compute
+	private int p1BonusScore;
+	private int p2BonusScore;
 	private String evens;
 	private String odds;
 	private String p1Option;//input - Odds or Evens
@@ -30,12 +32,15 @@ public class MorraGame{
 		p2Fingers = 1 + (int)(Math.random() * ((10 - 1) + 1));
 		p1Score=0;
 		p2Score=0;
+		p1BonusScore=0;
+		p2BonusScore=0;
 		distance=0;
 		evens="";
 		odds="";
 		total=0;
 		p1Option="";
 		p2Option="";
+
 
 	}
 
@@ -110,7 +115,19 @@ public class MorraGame{
 		//		p2Score = p2Score + 1;
 		//}
 
+		int distance = Math.abs(total - p1Fingers) < Math.abs(total - p2Fingers) ? p1Fingers : p2Fingers;
 
+		if (Math.abs(p1Fingers-total) <= Math.abs(p2Fingers-total)){
+			p1BonusScore = p1BonusScore + 1;
+		}
+		else if(p1Fingers==p2Fingers){
+			p1BonusScore = p1BonusScore + 0;
+			p2BonusScore = p2BonusScore + 0;
+		}
+
+		else{
+		  p2BonusScore = p2BonusScore + 1;
+		}
 
 	}
 
@@ -144,5 +161,11 @@ public class MorraGame{
 	}
 	public int getP2Score(){
 		return p2Score;
+	}
+	public int getP1BonusScore(){
+		return p1BonusScore;
+	}
+	public int getP2BonusScore(){
+		return p2BonusScore;
 	}
 }

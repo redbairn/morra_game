@@ -13,6 +13,8 @@ public class MorraGameApp{
 		int p2Fingers;//output - Math random input - Computer player
 		int p1Score;//output - for the round scores (p1)
 		int p2Score;//output - for the round scores (p2)
+		int p1BonusScore;
+		int p2BonusScore;
 		int total; //total number of fingers shown between the two players
 		String p1Option;//input - Odds or Evens
 		String p2Option;//input - Odds or Evens
@@ -26,7 +28,6 @@ public class MorraGameApp{
 
 
    		p1Option=JOptionPane.showInputDialog(null, "Would you like to be the option for Odd or Even?").toLowerCase();
-
 				while(!p1Option.equalsIgnoreCase("Odd") || !p1Option.equalsIgnoreCase("Even")){
 					JOptionPane.showMessageDialog(null,"Player1 - Please enter odd or even!");
 
@@ -61,6 +62,9 @@ public class MorraGameApp{
 			p1Score = myGame.getP1Score();
 			p2Score = myGame.getP2Score();
 			JOptionPane.showMessageDialog(null,"Player One has "+p1Score+" points and Player Two has "+p2Score+" points.");
+			p1BonusScore = myGame.getP1BonusScore();
+			p2BonusScore = myGame.getP2BonusScore();
+			JOptionPane.showMessageDialog(null,"Player One has "+p1BonusScore+" bonus points and Player Two has "+p2BonusScore+" bonus points.");
 		}
 	}
 }
