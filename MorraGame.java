@@ -25,7 +25,8 @@ public class MorraGame{
 	//Constructor
 	public MorraGame(){
 		p1Fingers=0;
-		p2Fingers = (int) (Math.random()*10); //no between 0 and 10
+		//p2Fingers = (int) (Math.random()*10); //no between 0 and 10
+		p2Fingers = 1 + (int)(Math.random() * ((10 - 1) + 1));
 		p1Score=0;
 		p2Score=0;
 		evens="";
