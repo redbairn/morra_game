@@ -1,6 +1,6 @@
 /*
 	Program: MorraGameApp.java
-	Authors: Craig Bell
+	Authors: Craig Bell, David Flood, Jason Merrigan
 	Date Updated: 25-03-2019
 	Class: Software Development (Java)
 */

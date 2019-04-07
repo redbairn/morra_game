@@ -1,6 +1,6 @@
 /*
 	Program: MorraGame.java
-	Authors: Craig Bell
+	Authors: Craig Bell, David Flood, Jason Merrigan
 	Jason Git Commit Test
 	Date Updated: 25-03-2019
 	Class: Software Development (Java)
