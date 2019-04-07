@@ -19,6 +19,7 @@ public class MorraGame{
 	private int p2BonusScore;
 	private int p1TotalScore;
 	private int p2TotalScore;
+	private int winningScore;
 	private String evens;
 	private String odds;
 	private String p1Option;//input - Odds or Evens
@@ -38,6 +39,7 @@ public class MorraGame{
 		p2BonusScore=0;
 		p1TotalScore=0;
 		p2TotalScore=0;
+		winningScore=6;
 		distance=0;
 		evens="";
 		odds="";
@@ -113,6 +115,7 @@ public class MorraGame{
 		p2TotalScore=p2Score+p2BonusScore;
 
 
+
 	}
 
 	//Getters
@@ -157,5 +160,8 @@ public class MorraGame{
 	}
 	public int getP2TotalScore(){
 		return p2TotalScore;
+	}
+	public int getWinningScore(){
+		return winningScore;
 	}
 }
