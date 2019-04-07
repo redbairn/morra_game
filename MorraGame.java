@@ -14,6 +14,7 @@ public class MorraGame{
 	private int p1Score;//output - for the round scores (p1)
 	private int p2Score;//output - for the round scores (p2)
 	private int total;//process
+	private int distance;// compute
 	private String evens;
 	private String odds;
 	private String p1Option;//input - Odds or Evens
@@ -29,6 +30,7 @@ public class MorraGame{
 		p2Fingers = 1 + (int)(Math.random() * ((10 - 1) + 1));
 		p1Score=0;
 		p2Score=0;
+		distance=0;
 		evens="";
 		odds="";
 		total=0;
@@ -62,15 +64,14 @@ public class MorraGame{
 		//_When the Human chooses one option we need to set the other option for the Computer
 		if(p1Option.equalsIgnoreCase("odd")){
 			p2Option="even";
-		}
-			else if(p1Option.equalsIgnoreCase("even")){
-				p2Option="odd";
+		}else if(p1Option.equalsIgnoreCase("even")){
+			p2Option="odd";
 		}
 		//_Total number of fingers between P1 and P2
 		total=(p1Fingers+p2Fingers);
 
 
-
+		//_Awarding the 2 points
 		//_Check if there is a remainder
 		if(total % 2==0){
 			//need to increment by 2 points
@@ -78,13 +79,37 @@ public class MorraGame{
 				p1Score = p1Score + 2;
 			else
 				p2Score = p2Score + 2;
-		}
-		else {
-		 if(p1Option.equals("odd"))
+		}else{
+		 	if(p1Option.equals("odd"))
 		 		p1Score = p1Score + 2;
 		 	else
 				p2Score = p2Score + 2;
 		}
+
+		//_Bonus Points
+		//int distance = Math.abs(numbers[0] - myNumber);
+		//int idx = 0;
+		//int[] numbers = new int[2];
+		//numbers[0] = p1Fingers;//Setting the amount of fingers for player 1 to an array index 0.
+		//numbers[1] = p2Fingers;//Setting the amount of fingers for player 3 to an array index 1.
+
+		//for(int i = 1; i < numbers.length; i++){
+		//	int cdistance = numbers[i] - myNumber;
+		//}
+		//_Give bonus points to the player closest to the total
+		//if(p1Fingers){
+		//need to increment by 1 points
+		//	if(p1Option)
+		//		p1Score = p1Score + 1;
+		//	else
+		//		p2Score = p2Score + 1;
+		///}else{
+		//	if(p1Option)
+		//		p1Score = p1Score + 1;
+		//	else
+		//		p2Score = p2Score + 1;
+		//}
+
 
 
 	}
