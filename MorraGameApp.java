@@ -28,6 +28,8 @@ public class MorraGameApp{
 
 		//Input
 		winningScore = myGame.getWinningScore();
+		p1TotalScore = myGame.getP1TotalScore();
+		p2TotalScore = myGame.getP2TotalScore();
 
    		p1Option=JOptionPane.showInputDialog(null, "Would you like to be the option for Odd or Even?").toLowerCase();
 				while(!p1Option.equalsIgnoreCase("Odd") || !p1Option.equalsIgnoreCase("Even")){
@@ -38,10 +40,13 @@ public class MorraGameApp{
 					myGame.setP1Option(p1Option);
 					break;
 				}
-				if(p1TotalScore == winningScore);{
+				while(p1TotalScore == winningScore || p2TotalScore == winningScore){
 					p1Option=JOptionPane.showInputDialog(null, "Would you like to be the option for Odd or Even?").toLowerCase();
-
+				if(p1Option.equalsIgnoreCase("Odd") || p1Option.equalsIgnoreCase("Even")){
+						myGame.setP1Option(p1Option);
+					break;
 				}
+			}
 		}
 		p1Fingers=Integer.parseInt(JOptionPane.showInputDialog(null, "Enter how many fingers you will show to Player 2: "));
 		myGame.setP1Fingers(p1Fingers);
