@@ -40,7 +40,7 @@ public class MorraGameApp{
 					myGame.setP1Option(p1Option);
 					break;
 				}
-				while(p1TotalScore == winningScore || p2TotalScore == winningScore){
+				while(p1TotalScore < 6 || p2TotalScore < 6){
 					p1Option=JOptionPane.showInputDialog(null, "Would you like to be the option for Odd or Even?").toLowerCase();
 				if(p1Option.equalsIgnoreCase("Odd") || p1Option.equalsIgnoreCase("Even")){
 						myGame.setP1Option(p1Option);
